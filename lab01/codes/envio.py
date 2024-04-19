@@ -6,6 +6,7 @@ import time
 # Loopback IP
 ip_loopback = '127.0.0.1'
 
+
 def convert_payload(data, index):
     icmp_data = bytes(data, 'utf-8') + os.urandom(1) + bytes([index])
     icmp_data += bytes('\x00\x00\x00\x00\x00', 'utf-8')
@@ -23,6 +24,8 @@ if len(sys.argv) != 2:
     sys.exit(1)
 
 texto = sys.argv[1]
+
+
 
 for i in range(len(texto)):
     caracter = texto[i]
